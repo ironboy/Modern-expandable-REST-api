@@ -1,0 +1,30 @@
+{
+  "port": 5001,
+  "restPrefix": "/api",
+  "staticFolder": "../../frontend",
+  "dbType": "SQLite",
+  "comment1": "SQLite specific setting",
+  "dbPath": "./databases/live.sqlite3",
+  "comment2": "MySQL specific settings",
+  "dbHost": "localhost",
+  "dbPort": 3306,
+  "dbUser": "root",
+  "dbPassword": "12345678",
+  "dbDatabase": "usersAndPets",
+  "comment3": "MongoDB specific settings",
+  "mongoDbConnectionURI": "enter a MongoDB connection uri here",
+  "mongoDbDatabase": "petsAndOwners",
+  "comment4": "The rest of our settings",
+  "aclTableName": "acl",
+  "aclProtectionOn": false,
+  "sessionSecret": "hardToGuess32894023840234",
+  "userTableName": "users",
+  "userNameField": "email",
+  "userRoleField": "role",
+  "bcryptRounds": 12,
+  "passwordOkRegEx": "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$",
+  "passwordOkIf": "minimum eight characters, at least one letter and one number",
+  "passwordFieldNames": [
+    "password"
+  ]
+}
