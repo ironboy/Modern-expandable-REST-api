@@ -1,16 +1,18 @@
 import fs from 'fs';
 import path from 'path';
 import callsites from 'callsites';
+import url from 'url';
 
 export default class PathFinder {
 
   // Get the path of the calling function
   static stackPath(depth = 0) {
-    return callsites()
+    let p = callsites()
       .map(x => x.getFileName())
       .filter(x => !x.endsWith('PathFinder.js'))
-      .filter(x => x.startsWith('file:///'))
-      .map(x => x.slice(7))[0];
+      .filter(x => x.includes('file://'))[0]
+      .split('file://')[1]
+    return p[2] === ':' ? p.slice(1) : p;
   }
 
   // Turn a relative file path into an absolute one
