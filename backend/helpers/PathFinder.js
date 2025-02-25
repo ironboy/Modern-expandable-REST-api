@@ -29,7 +29,7 @@ export default class PathFinder {
   // Equivalent to __dirname in .cjs
   // (and to import.meta.dirname i .mjs)
   static get dirname() {
-    return this.filename.replace(/\/[^\/]*$/, '');
+    return this.filename.replace(/\/[^\/]*$/, "").replaceAll("%20", " ");
   }
 
   // Equivalent to require('path.json') in .cjs
