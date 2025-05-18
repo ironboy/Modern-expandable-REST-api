@@ -37,11 +37,11 @@ export default class DBQueryMaker {
     }
     catch (error) { result = { error: error + '' }; }
     // log method, route, query, parameters and result
-    this.log && method && route && console.log('\nDB Query:', {
+    /*this.log && method && route && console.log('\nDB Query:', {
       method, route, sql, parameters,
       result: result instanceof Array ?
         { rows: result.length } : result
-    });
+    });*/
     return result;
   }
 

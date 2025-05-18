@@ -1,6 +1,6 @@
 import SQLiteStore from 'better-express-store';
-import MySQLStore from 'express-mysql-session';
-import MongoDBStore from 'connect-mongodb-session';
+// import MySQLStore from 'express-mysql-session';
+// import MongoDBStore from 'connect-mongodb-session';
 import PathFinder from '../helpers/PathFinder.js';
 
 
@@ -12,7 +12,7 @@ export default function sessionStore(settings, session) {
       deleteAfterInactivityMinutes: 120
     });
   }
-  else if (settings.dbType === 'MySQL') {
+  /*else if (settings.dbType === 'MySQL') {
     const { dbHost: host, dbPort: port, dbUser: user,
       dbPassword: password, dbDatabase: database } = settings;
     return new (MySQLStore(session))({
@@ -25,5 +25,5 @@ export default function sessionStore(settings, session) {
       databaseName: settings.mongoDbDatabase,
       collection: 'sessions'
     });
-  }
+  }*/
 }
