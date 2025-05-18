@@ -10,7 +10,7 @@ export default class PasswordChecker {
       const body = req.body || {};
       let passwordOk = true;
       for (let field of settings.passwordFieldNames) {
-        if (field in req.body && !regEx.test(req.body[field])) {
+        if (field in body && !regEx.test(req.body[field])) {
           res.status(400).json({
             error: 'Password does not fulfill: ' + settings.passwordOkIf
           });

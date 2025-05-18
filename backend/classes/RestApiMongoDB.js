@@ -35,7 +35,7 @@ export default class RestApi {
     this.addCatchAllRoute();
   }
 
-  // send data as a json response 
+  // send data as a json response
   // after running it through the acl system for filtering
   // alsow remove any password fields (according to settings)
   // and alter the status to 400 (bad request) if the data contains a error property
@@ -104,7 +104,7 @@ export default class RestApi {
       const { table, id } = req.params;
       let { body } = req;
       this.stripRoleField(table, body);
-      delete body._id; // id:s should be set in the route 
+      delete body._id; // id:s should be set in the route
       await PasswordEncryptor.encrypt(body);
       const result = await this.db.query(req.method, req.url, table,
         'updateOne',
@@ -130,9 +130,9 @@ export default class RestApi {
 
   addCatchAllRoute() {
     // send if the route is missing
-    this.app.all(this.prefix + '*', (_req, res) => {
+    /*this.app.all(this.prefix + '{*splat}', (_req, res) => {
       this.sendJsonResponse(res, { error: 'No such route exists in the REST-api' });
-    });
+    });*/
   }
 
 }

@@ -36,7 +36,7 @@ export default class RestApi {
     this.addCatchAllRoute();
   }
 
-  // send data as a json response 
+  // send data as a json response
   // after running it through the acl system for filtering
   // alsow remove any password fields (according to settings)
   // and alter the status to 400 (bad request) if the data contains a error property
@@ -66,7 +66,7 @@ export default class RestApi {
       this.stripRoleField(table, body);
       delete body.id; // id:s should be set by the db
       const result = await this.db.query(req.method, req.url,/*sql*/`
-        INSERT INTO ${table} (${Object.keys(body).join(', ')}) 
+        INSERT INTO ${table} (${Object.keys(body).join(', ')})
         VALUES (${Object.keys(body).map(x => ':' + x).join(', ')})
       `, body);
       this.sendJsonResponse(res, result);
@@ -91,7 +91,7 @@ export default class RestApi {
     this.app.get(this.prefix + ':table/:id', async (req, res) => {
       const { table, id } = req.params;
       const result = await this.db.query(req.method, req.url,/*sql*/`
-        SELECT * FROM ${table} 
+        SELECT * FROM ${table}
         WHERE id = :id
       `, { id });
       this.sendJsonResponse(res, result, true);
@@ -104,7 +104,7 @@ export default class RestApi {
       const { table, id } = req.params;
       let { body } = req;
       this.stripRoleField(table, body);
-      delete body.id; // id:s should be set in the route 
+      delete body.id; // id:s should be set in the route
       const result = await this.db.query(req.method, req.url,/*sql*/`
         UPDATE ${table}
         SET ${Object.keys(body).map(x => x + '= :' + x).join(', ')}
@@ -119,7 +119,7 @@ export default class RestApi {
     this.app.delete(this.prefix + ':table/:id', async (req, res) => {
       const { table, id } = req.params;
       const result = await this.db.query(req.method, req.url,/*sql*/`
-        DELETE FROM ${table} 
+        DELETE FROM ${table}
         WHERE id = :id
       `, { id });
       this.sendJsonResponse(res, result);
@@ -128,9 +128,9 @@ export default class RestApi {
 
   addCatchAllRoute() {
     // send if the route is missing
-    this.app.all(this.prefix + '*', (_req, res) => {
+    /*this.app.all(this.prefix + '{*splat}', (_req, res) => {
       this.sendJsonResponse(res, { error: 'No such route exists in the REST-api' });
-    });
+    });*/
   }
 
 }
