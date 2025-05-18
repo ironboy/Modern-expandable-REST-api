@@ -12,7 +12,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "better-express-store": "^1.0.5",
-    "better-sqlite3": "^11.3.0",
+    "better-sqlite3": "^11.10.0",
     "callsites": "^4.2.0",
     "connect-mongodb-session": "^5.0.0",
     "express": "^4.21.0",
