@@ -4,7 +4,7 @@
   "staticFolder": "../../frontend",
   "dbType": "SQLite",
   "comment1": "SQLite specific setting",
-  "dbPath": "../databases/live.db",
+  "dbPath": "../databases/with-acl.sqlite3",
   "comment2": "MySQL specific settings",
   "dbHost": "localhost",
   "dbPort": 3306,
