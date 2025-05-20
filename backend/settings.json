@@ -16,7 +16,7 @@
   "mongoDbDatabase": "petsAndOwners",
   "comment4": "The rest of our settings",
   "aclTableName": "acl",
-  "aclProtectionOn": false,
+  "aclProtectionOn": true,
   "sessionSecret": "hardToGuess32894023840234",
   "userTableName": "users",
   "userNameField": "email",

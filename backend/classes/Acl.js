@@ -30,7 +30,7 @@ export default class Acl {
         // store info needed for the result filtering on the resposne object
         res.aclFilterInfo = {
           userId, fieldMatchingUserId: (matchingRule || {}).fieldMatchingUserId
-        }
+        };
         // TODO: make fieldMatchingUserId rules work with other than GET queries
         // for now just don't allow PUT, POST and DELETE on those rules
         if (req.method !== 'GET' && (matchingRule || {}).fieldMatchingUserId) {
