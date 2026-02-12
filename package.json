@@ -5,7 +5,7 @@
   "description": "An example of building a modern generic REST-api with Node.js+Express.",
   "main": "backend/index.js",
   "scripts": {
-    "backend": "node backend/index.js"
+    "start": "node backend/index.js"
   },
   "author": "ironboy",
   "license": "MIT",
