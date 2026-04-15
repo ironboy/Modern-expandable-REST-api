@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Mochi",
+    "species": "cat",
+    "ownerId": 1
+  },
+  {
+    "id": 2,
+    "name": "Lassie",
+    "species": "dog",
+    "ownerId": 2
+  },
+  {
+    "id": 3,
+    "name": "Biscuit",
+    "species": "dog",
+    "ownerId": 1
+  },
+  {
+    "id": 4,
+    "name": "Sushi",
+    "species": "cat",
+    "ownerId": 2
+  },
+  {
+    "id": 5,
+    "name": "Pepper",
+    "species": "rabbit",
+    "ownerId": 3
+  },
+  {
+    "id": 6,
+    "name": "Nemo",
+    "species": "fish",
+    "ownerId": 4
+  },
+  {
+    "id": 7,
+    "name": "Kiwi",
+    "species": "parrot",
+    "ownerId": 5
+  },
+  {
+    "id": 8,
+    "name": "Shadow",
+    "species": "cat",
+    "ownerId": null
+  },
+  {
+    "id": 9,
+    "name": "Rocky",
+    "species": "hamster",
+    "ownerId": null
+  },
+  {
+    "id": 10,
+    "name": "Luna",
+    "species": "dog",
+    "ownerId": null
+  }
+]
