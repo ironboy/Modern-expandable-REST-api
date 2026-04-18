@@ -14,7 +14,7 @@ if (!isSQLite && !isMySQL && !isMongoDB) {
 
 // import the correct version of the rest API
 const RestApi =
-  (await import(isSQL ? './RestAPiSQL.js' : './RestApiMongoDB.js')).default;
+  (await import(isSQL ? './RestApiSQL.js' : './RestApiMongoDB.js')).default;
 
 export default class Server {
 
